@@ -66,9 +66,26 @@ for peli in peliculas:
     peli.dislike()
     peli.display()
 #definimos un a lista para guardar solo los titulos de nuestras peliculas
-ptitulos=[]
+
 ptitulos=[p.titulo,p2.titulo,p3.titulo,p4.titulo,p5.titulo,p6.titulo,p7.titulo,p8.titulo,p9.titulo,p10.titulo,p11.titulo]#Agrgamos a la lista nuestrso titulos
 peliculass=sorted(ptitulos)
+
+prangos=[p.rango,p2.rango,p3.rango,p4.rango,p5.rango,p6.rango,p7.rango,p8.rango,p9.rango,p10.rango,p11.rango]
+rangoss=sorted(prangos)
+print(rangoss)
+
+archivo= open(".\\movies_alpha.txt","w")#ruta absoluta
+#si escribimos una "a" en vez de w o r podemos adjuntar al archivo
+for pelicula in peliculass:
+    archivo.write(pelicula+"\n")
+
+archivo.close()
+
+archivo= open(".\\movies_rank.txt","w")#ruta absoluta
+#si escribimos una "a" en vez de w o r podemos adjuntar al archivo
+for rango in rangoss:
+    archivo.write(str(rango)+"\n")
+archivo.close()
 
 
 
