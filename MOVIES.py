@@ -1,3 +1,6 @@
+#Importacion de Random
+import random
+
 Movies=[]
 class Movie:
     """Esta es la clases que se encargara de darle los rangos 
@@ -18,19 +21,34 @@ class Movie:
     def like (self):
         """Este metodo incrementa 1 punto a la pelicula """
         print("El rango se la Pelicula",self.titulo,"es",self.rango)
-        self.rango=+1
-        print("El rango se la Pelicula",self.titulo,"aumento y ahora es",self.rango)
+        if self.rango>=10:
+            print("El rango de la Pelicula",self.titulo,"esta al maximo y es",self.rango)
+        else:
+            self.rango=self.rango+1
+            print("El rango de la Pelicula",self.titulo,"aumento y ahora es",self.rango)
+            print("....................................................................")
     def dislike(self):
         """Este metodo desincrementa 1 punto a la pelicula"""
-        print("El rango se la Pelicula",self.titulo,"es",self.rango)
-        self.rango=-1
-        print("El rango se la Pelicula",self.titulo,"aumento y ahora es",self.rango)
+        print("El rango de la Pelicula",self.titulo,"es",self.rango)
+        self.rango=self.rango-1
+        print("El rango de la Pelicula",self.titulo,"disminuyo y ahora es",self.rango)
+        print("....................................................................")
     def display(self):
         print("Pelicula:",self.titulo.title())
         print("Rango:",self.rango)
         Movies.append(self.titulo.title())
 
     pass
+def rank():
+    rango=(random.randint(0, 10))
+    return rango
 
 
+p=Movie("Terminator",rank())
+p.like()
+p.like()
+p.dislike()
+p.display()
+
+print(Movies)
 
